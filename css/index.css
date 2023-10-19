@@ -1,44 +1,69 @@
-@import url(theme.css);
-
-:root {
-    font-family: 'Roboto', system-ui, sans-serif;
+html,
+body {
+    height: 100%;
+    margin: 0;
+    background-image: url("/images/coverimage.jpg");
 }
 
-* {
-    box-sizing: border-box;
+.box {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
 }
 
-.left {
-    background-color: var(--md-sys-color-primary-container);
-    padding: 20px;
+.box .nav {
+    flex: 0 1 auto;
+}
+
+.box .cover-container {
+    background-color: #000000cc;
+    flex: 1 1 auto;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+}
+
+.title-container {
+    background-color: rgba(var(--md-sys-color-secondary), 0.5);
+    border-radius: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 3px solid var(--md-sys-color-surface);
+}
+
+.title {
+    font-size: 50pt;
+    margin: 0px;
+}
+
+.title-flow {
     float: left;
-    width: 20%;
-    /* The width is 20%, by default */
+    position: relative;
+    display: contents;
+    height: 100%;
 }
 
-.main {
-    background-color: var(--md-sys-color-primary);
-    padding: 20px;
-    float: left;
-    width: 60%;
-    /* The width is 60%, by default */
+.title-flow#title-text {
+    padding: 1px;
 }
 
-.right {
-    background-color: var(--md-sys-color-primary-container);
-    padding: 20px;
-    float: left;
-    width: 20%;
-    /* The width is 20%, by default */
+.title-flow #profile-image {
+    padding: 1px;
+    border-radius: 50%;
+    border: 3px solid var(--md-sys-color-secondary);
 }
 
-/* Use a media query to add a break point at 800px: */
-@media screen and (max-width: 800px) {
-
-    .left,
-    .main,
-    .right {
-        width: 100%;
-        /* The width is 100%, when the viewport is 800px or smaller */
-    }
+.title-flow#spacer {
+    padding: 1px;
+    width: 50px;
+    border-radius: 50%;
 }

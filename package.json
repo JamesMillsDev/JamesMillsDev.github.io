@@ -2,7 +2,12 @@
   "dependencies": {
     "@material/web": "^1.0.0",
     "@rollup/plugin-node-resolve": "^15.2.3",
-    "lts": "^1.2.0",
     "rollup": "^4.0.2"
-  }
+  },
+  "name": "website",
+  "version": "1.0.0",
+  "main": "js/index.js",
+  "author": "James Mills",
+  "license": "ISC",
+  "description": ""
 }
