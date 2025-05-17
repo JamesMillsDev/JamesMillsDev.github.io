@@ -1,50 +1,341 @@
 <!DOCTYPE html>
+<html style="font-size: 16px;" lang="en"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="James Mills">
+    <meta name="description" content="">
+    <title>Home</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+<link rel="stylesheet" href="index.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 7.7.3, nicepage.com">
+    <meta name="referrer" content="origin">
+    
+    
+    
+    
+    
+    
+    
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i">
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "Site2",
+		"logo": "images/JM_Logo.png"
+}</script>
+    <meta name="theme-color" content="#0c8558">
+    <meta property="og:title" content="Home">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+  <script>
+    function gdprConfirmed() {
+        return true;
+    }
+    function dynamicLoadScript() {
+        var script = document.createElement('script');
+        script.src = 'https://www.google.com/recaptcha/api.js?render=6LftwD0rAAAAAN-0SZ9PRfHkIsdhO5RY0V27T6eS';
+        script.async = true;
+        document.body.appendChild(script);
+        script.onload = function() {
+            let event = new CustomEvent("recaptchaLoaded");
+            document.dispatchEvent(event);
+        };
+    }
+    function showRecaptchaError(error) {
+        error = error || '';
+        var formError = document.querySelector('.u-form-send-error');
 
-<head>
-  <link rel="stylesheet" href="css/core.css" />
-  <link rel="stylesheet" href="css/index.css" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  <script src="js/bundle.js"></script>
+        if (formError) {
+            formError.innerText = 'Site Owner Error: ' + error.replace(/:[\s\S]*/, '');
+            formError.style.display = 'block';
+        }
 
-  <title>James Mills | Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="James Mills is an experienced developer with 7 years of industry experience in VR.">
-  <meta name="author" content="James Mills">
-</head>
+        console.error('Error in grecaptcha: ', error);
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+        var confirmButton = document.querySelector('.u-cookies-consent .u-button-confirm');
+        if (confirmButton) {
+            confirmButton.onclick = dynamicLoadScript;
+        }
+    });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            if (!gdprConfirmed()) {
+                return;
+            }
+            dynamicLoadScript();
+        });
+    </script>
+    <script>
+        document.addEventListener("recaptchaLoaded", function() {
+            if (!gdprConfirmed()) {
+                return;
+            }
 
-<body>
-  <div class="box">
-    <div class="nav" id="header">
-      <md-elevation></md-elevation>
-      <div class="nav-left">
+            (function (grecaptcha, sitekey, actions) {
+                var recaptcha = {
+                    execute: function (action, submitFormCb) {
+                        if (typeof grecaptcha === 'undefined' || typeof grecaptcha.execute !== 'function') {
+                            showRecaptchaError('reCAPTCHA script failed to load.');
+                            return;
+                        }
+
+                        grecaptcha.execute(sitekey, {action: action}).then((token) => {
+                            if (!token) {
+                                throw new Error('Empty token received from reCAPTCHA');
+                            }
+
+                            var forms = document.getElementsByTagName('form');
+
+                            for (var i = 0; i < forms.length; i++) {
+                                var response = forms[i].querySelector('[name="recaptchaResponse"]');
+
+                                if (!response) {
+                                    response = document.createElement('input');
+                                    response.setAttribute('type', 'hidden');
+                                    response.setAttribute('name', 'recaptchaResponse');
+                                    forms[i].appendChild(response);
+                                }
+
+                                response.value = token;
+                            }
+
+                            submitFormCb();
+                        }).catch((e) => {
+                            showRecaptchaError(e.message);
+                        });
+                    },
+
+                    executeContact: function (submitFormCb) {
+                        recaptcha.execute(actions['contact'], submitFormCb);
+                    }
+                };
+
+                window.recaptchaObject = recaptcha;
+            })(
+                grecaptcha,
+                
+                '6LftwD0rAAAAAN-0SZ9PRfHkIsdhO5RY0V27T6eS',
+                {'contact': 'contact'}
+            );
+        });
+    </script>
+<meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <body data-home-page="Home.html" data-home-page-title="Home" data-path-to-root="./" data-include-products="false" class="u-body u-custom-color-1 u-overlap u-xl-mode" data-lang="en"><header class="u-black u-clearfix u-header u-sticky u-sticky-5921" id="header-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+        <a href="#" class="u-image u-logo u-image-1" data-image-width="1024" data-image-height="1024">
+          <img src="images/JM_Logo.png" class="u-logo-image u-logo-image-1">
+        </a>
+        <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
+          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+            <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-hamburger-link u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+              <svg class="u-svg-link" viewBox="0 0 24 24"><use xlink:href="#menu-hamburger"></use></svg>
+              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</g></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="./" style="padding: 10px 20px;">{ Home }</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="./#block-3" data-page-id="670515644" style="padding: 10px 20px;">{ AboutMe }</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="./#block-4" data-page-id="670515644" style="padding: 10px 20px;">{ Skills }</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="./#block-5" data-page-id="670515644" style="padding: 10px 20px;">{ Projects }</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="./#block-6" data-page-id="670515644" style="padding: 10px 20px;">{ ContactMe }</a>
+</li></ul>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="./">{ Home }</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="./#block-3" data-page-id="670515644">{ AboutMe }</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="./#block-4" data-page-id="670515644">{ Skills }</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="./#block-5" data-page-id="670515644">{ Projects }</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="./#block-6" data-page-id="670515644">{ ContactMe }</a>
+</li></ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+      </div></header>
+    <section class="u-clearfix u-grey-90 u-section-1" id="block-2">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h3 class="u-text u-text-1">Hello! I'm</h3>
+        <h1 class="u-custom-font u-font-lato u-text u-text-default u-text-palette-1-light-1 u-text-2">James Mills</h1>
+        <h3 class="u-text u-text-default u-text-3">Tools and networking programmer.</h3>
+        <p class="u-large-text u-text u-text-default u-text-variant u-text-4">Sample large text. As a game developer I am experienced in - passionate about -&nbsp;</p>
+        <a href="./#block-6" data-page-id="670515644" class="u-active-custom-color-2 u-border-0 u-btn u-btn-round u-button-style u-hover-custom-color-3 u-radius u-text-active-black u-text-black u-text-hover-black u-btn-1">Contact Me!</a>
       </div>
-      <div class="nav-center">
+    </section>
+    <section class="u-clearfix u-grey-90 u-section-2" id="block-3">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <div class="data-layout-selected u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout">
+            <div class="u-layout-row">
+              <div class="u-container-style u-layout-cell u-size-40 u-layout-cell-1">
+                <div class="u-container-layout u-container-layout-1">
+                  <h3 class="u-text u-text-default u-text-1">&lt; /About Me &gt; </h3>
+                  <p class="u-large-text u-text u-text-default u-text-variant u-text-2"> Hey, I’m James – a game developer with 6+ years of experience working in Unity (C#) and Unreal Engine (C++). Experienced with VR. Passionate about doing frameworks, AI, networking. Enjoy dabbling in every part of the game development pipeline, from modelling to shaders to physics.<br>
+                    <br>I’ve always been obsessed with the magic behind games – especially procedural generation, which constantly pulls me down rabbit holes of systems designing. I grew up on PS2 platformers and story-driven games, like&nbsp;Jak and Daxter, Ratchet and Clank, and Kingdom Hearts, and that love still fuels the kind of experiences I aim to create: ones that are fun, immersive, and leave a lasting impact.<br>
+                    <br>I’m always up for collaborating on something creative, building tools that make life easier for developers, or chatting about game dev over coffee (or cat pics).
+                  </p>
+                </div>
+              </div>
+              <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-2">
+                <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-container-layout-2">
+                  <img class="u-image u-image-contain u-image-default u-preserve-proportions u-image-1" src="images/James_pfp_colour_edited.png" alt="" data-image-width="2000" data-image-height="2000">
+                  <img class="u-hover-feature u-image u-image-contain u-image-default u-opacity u-opacity-0 u-preserve-proportions u-image-2" src="images/D_James_pfp_colour_edit.png" alt="" data-image-width="2000" data-image-height="2000">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="nav-right">
-        <md-icon-button id="menu-button">
-          <md-icon>menu</md-icon>
-        </md-icon-button>
-        <md-menu id="nav-menu" anchor="menu-button">
-          <!-- Replace with the contents of the menu -->
-        </md-menu>
+      
+    </section>
+    <section class="u-clearfix u-grey-90 u-section-3" id="block-4">
+      <div class="u-clearfix u-sheet u-valign-bottom-lg u-valign-bottom-md u-valign-bottom-sm u-valign-bottom-xs u-sheet-1">
+        <h3 class="u-text u-text-default u-text-1">&lt; /Skills &gt;</h3>
+        <div class="u-border-2 u-border-palette-1-light-1 u-container-style u-grey-80 u-group u-radius u-shape-round u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <h4 class="u-text u-text-default u-text-2">Languages</h4>
+            <div class="u-border-3 u-border-palette-1-light-1 u-expanded-width u-line u-line-horizontal u-line-1"></div>
+          </div>
+        </div>
+        <div class="u-border-2 u-border-palette-1-light-1 u-container-style u-grey-80 u-group u-radius u-shape-round u-group-2">
+          <div class="u-container-layout u-container-layout-2">
+            <h4 class="u-text u-text-default u-text-3">Engines</h4>
+            <div class="u-border-3 u-border-palette-1-light-1 u-expanded-width u-line u-line-horizontal u-line-2"></div>
+          </div>
+        </div>
+        <div class="u-border-2 u-border-palette-1-light-1 u-container-style u-grey-80 u-group u-radius u-shape-round u-group-3">
+          <div class="u-container-layout u-container-layout-3">
+            <h4 class="u-text u-text-default u-text-4">Tools</h4>
+            <div class="u-border-3 u-border-palette-1-light-1 u-expanded-width u-line u-line-horizontal u-line-3"></div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
+    <section class="u-clearfix u-grey-90 u-section-4" id="block-5" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h3 class="u-text u-text-default u-text-1">&lt; /Projects &gt;</h3>
+        <div class="u-expanded-width u-list u-list-1">
+          <div class="u-repeater u-repeater-1">
+            <div class="u-container-style u-list-item u-repeater-item">
+              <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-1">
+                <div class="custom-expanded u-container-style u-custom-color-1 u-group u-radius u-shape-round u-group-1">
+                  <div class="u-container-layout u-container-layout-2"></div>
+                </div>
+              </div>
+            </div>
+            <div class="u-container-style u-list-item u-repeater-item">
+              <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-3">
+                <div class="custom-expanded u-container-style u-custom-color-1 u-group u-radius u-shape-round u-group-2">
+                  <div class="u-container-layout u-container-layout-4"></div>
+                </div>
+              </div>
+            </div>
+            <div class="u-container-style u-list-item u-repeater-item">
+              <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-5">
+                <div class="custom-expanded u-container-style u-custom-color-1 u-group u-radius u-shape-round u-group-3">
+                  <div class="u-container-layout u-container-layout-6"></div>
+                </div>
+              </div>
+            </div>
+            <div class="u-container-style u-list-item u-repeater-item">
+              <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-7">
+                <div class="custom-expanded u-container-style u-custom-color-1 u-group u-radius u-shape-round u-group-4">
+                  <div class="u-container-layout u-container-layout-8"></div>
+                </div>
+              </div>
+            </div>
+            <div class="u-container-style u-list-item u-repeater-item">
+              <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-9">
+                <div class="custom-expanded u-container-style u-custom-color-1 u-group u-radius u-shape-round u-group-5">
+                  <div class="u-container-layout u-container-layout-10"></div>
+                </div>
+              </div>
+            </div>
+            <div class="u-container-style u-list-item u-repeater-item">
+              <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-11">
+                <div class="custom-expanded u-container-style u-custom-color-1 u-group u-radius u-shape-round u-group-6">
+                  <div class="u-container-layout u-container-layout-12"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-grey-90 u-section-5" id="block-6" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+        <div class="data-layout-selected u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout">
+            <div class="u-layout-row">
+              <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
+                <div class="u-container-layout u-valign-bottom-lg u-valign-bottom-md u-valign-bottom-sm u-valign-bottom-xs u-container-layout-1">
+                  <h3 class="u-text u-text-default u-text-1"> &lt; /Get In Touch &gt;</h3>
+                  <p class="u-large-text u-text u-text-default u-text-variant u-text-2">Sample large text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p>
+                  <img class="u-hover-feature u-image u-image-contain u-image-default u-preserve-proportions u-image-1" src="images/twitch.png" alt="" data-image-width="512" data-image-height="512">
+                  <img class="u-hover-feature u-image u-image-contain u-image-default u-preserve-proportions u-image-2" src="images/linkedin.png" alt="" data-image-width="512" data-image-height="512">
+                  <img class="u-hover-feature u-image u-image-contain u-image-default u-preserve-proportions u-image-3" src="images/bluesky-black-round-circle-logo-24460.png" alt="" data-image-width="1024" data-image-height="1024">
+                  <img class="u-hover-feature u-image u-image-contain u-image-default u-preserve-proportions u-image-4" src="images/youtube.png" alt="" data-image-width="512" data-image-height="512">
+                  <img class="u-hover-feature u-image u-image-contain u-image-default u-preserve-proportions u-image-5" src="images/github.png" alt="" data-image-width="512" data-image-height="512">
+                </div>
+              </div>
+              <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
+                <div class="u-container-layout u-valign-middle u-container-layout-2">
+                  <div class="custom-expanded u-form u-form-1">
+                    <form action="https://forms.nicepagesrv.com/v2/form/process" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email" name="form" style="padding: 10px;">
+                      <div class="u-form-group u-form-name">
+                        <label for="name-3d04" class="u-label">Name</label>
+                        <input type="text" placeholder="Enter your Name" id="name-3d04" name="name" class="u-input u-input-rectangle" required="">
+                      </div>
+                      <div class="u-form-email u-form-group">
+                        <label for="email-3d04" class="u-label">Email</label>
+                        <input type="email" placeholder="Enter a valid email address" id="email-3d04" name="email" class="u-input u-input-rectangle" required="">
+                      </div>
+                      <div class="u-form-group u-form-message">
+                        <label for="message-3d04" class="u-label">Message</label>
+                        <textarea placeholder="Enter your message" rows="4" cols="50" id="message-3d04" name="message" class="u-input u-input-rectangle" required=""></textarea>
+                      </div>
+                      <div class="u-align-left u-form-group u-form-submit">
+                        <a href="#" class="u-active-custom-color-1 u-border-none u-btn u-btn-submit u-button-style u-palette-1-base u-btn-1">Submit</a>
+                        <input type="submit" value="submit" class="u-form-control-hidden">
+                      </div>
+                      <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
+                      <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
+                      <input type="hidden" value="" name="recaptchaResponse">
+                      <input type="hidden" name="formServices" value="f5014a2a-8b3f-83e5-d22c-1d43dfdf8ddf">
+                      <input type="hidden" name="siteKey" value="6LftwD0rAAAAAN-0SZ9PRfHkIsdhO5RY0V27T6eS">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+      
+      
+    </section>
+    
+    
+    
+    <footer class="u-align-center u-clearfix u-container-align-center u-footer u-grey-90 u-footer" id="footer-1"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1"> © James Mills</p>
+      </div></footer>
+    <section class="u-backlink u-clearfix u-grey-80">
+      <p class="u-text"><span>This site was created with the </span>
+        <a class="u-link" href="https://nicepage.com/" target="_blank" rel="nofollow"><span>Nicepage</span>
+        </a>
+      </p>
+    </section>
   
-    <div class="cover-container">
-      <div class="title-container select-disable">
-        <div class="title-flow">
-          <img src="images/profile-image.jpg" id="profile-image" width="200px" height="200px">
-        </div>
-        <div class="title-flow" id="spacer"></div>
-        <div class="title-flow" id="title-text">
-          <h1 class="title">James Mills</h1>
-          <h3>Framework, network and AI programmer.</h3>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script src="js/index.js"></script>
-</body>
-
-</html>
+</body></html>
